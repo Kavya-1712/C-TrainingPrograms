@@ -28,7 +28,7 @@ int main()
 
     if (AllPassed)
     {
-        printf("All test cases are passed.\n");
+        printf("All test cases have passed.\n");
     }
 
     return 0;
@@ -44,3 +44,4 @@ void TestPrime(int value, int expected)
         AllPassed = 0; 
     }  
 }
+
