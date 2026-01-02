@@ -7,8 +7,6 @@ void testPrime(int value, int expected);
 
 int main()
 {
-	// int values[]   = { -50, 10, 91, 93, 101, 159, 197 };
-    // int expected[] = {  0, 0, 0, 0, 1, 0, 1 };
     int testData[][2] =
     {
         { -50, 0 },
@@ -28,18 +26,6 @@ int main()
         testPrime(testData[counter][0], testData[counter][1]);
     }
 
-    // for (counter = 0; counter < size; counter++)
-    // {
-    // 	testPrime(values[counter], expected[counter]);
-    // }
-    // testPrime(-50, 0);
-    // testPrime(6657, 0);
-    // testPrime(1217, 1);
-    // testPrime(10, 0);
-    // testPrime(91, 0);
-    // testPrime(93, 0);
-    // testPrime(101, 0);
-
     if (allPassed)
     {
         printf("All test cases are passed.\n");
@@ -58,3 +44,4 @@ void testPrime(int value, int expected)
         allPassed = 0; 
     }  
 }
+
