@@ -1,3 +1,5 @@
+# CRUD Operations
+
 FILENAME = "library.txt"
 
 def get_field_names():
@@ -7,16 +9,14 @@ def load_records_from_file():
     records = []
     try:
         with open(FILENAME, "r") as fpLibrary:
-            for record in fpLibrary:
-                records.append(record.strip().split())
+             return [line.strip().split() for line in fpLibrary]
     except FileNotFoundError:
         pass
     return records
 
 def save_records_to_file(records):
     with open(FILENAME, "w") as fpLibrary:
-        for record in records:
-            fpLibrary.write(" ".join(record) + "\n")
+        fpLibrary.write("\n".join(" ".join(record) for record in records))
 
 def find_record_index(book_id, records):
     for index, record in enumerate(records):
@@ -108,3 +108,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
