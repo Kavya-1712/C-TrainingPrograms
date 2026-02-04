@@ -1,38 +1,9 @@
-# CRUD Framework
+# Generic CRUD Framework
 
 import ast
+from Configuration import CONFIGURATION
 
 FILENAME = "details.dat"
-
-CONFIGURATION = {
-    "domain": "Book",
-
-    "menu": {
-        1: "Add Book",
-        2: "Display Books",
-        3: "Update Book",
-        4: "Delete Book",
-        5: "Exit"
-    },
-
-    "fields": [
-        "Book ID",
-        "Book Name",
-        "Author",
-        "Quantity"
-    ],
-
-    "max_field_length": 50,
-
-    "messages": {
-        "created": "{domain} added successfully.",
-        "updated": "{domain} updated successfully.",
-        "deleted": "{domain} deleted successfully.",
-        "not_found": "{domain} not found.",
-        "invalid": "Invalid input.",
-        "no_active": "No active {domain} found."
-    }
-}
 
 STATUS_ACTIVE = "1"
 STATUS_DELETED = "0"
@@ -130,7 +101,6 @@ def delete():
     records[index][-1] = STATUS_DELETED
     save_records()
     print_message("deleted")
-
 
 def exit_program():
     global running
