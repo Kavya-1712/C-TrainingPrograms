@@ -31,7 +31,7 @@ def show_menu():
         return -1
     return int(choice)
 
-def get_active_record_index():
+def get_active_book():
     records = load_records_from_file()
     book_id = input("Enter Book ID: ")
 
