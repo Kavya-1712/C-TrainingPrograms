@@ -39,12 +39,13 @@ def get_active_book():
     if index == -1:
         print("Book not found or already deleted.\n")
         return None, None
-      
+
     return records, index
+
 
 def add_book():
     records = load_records_from_file()
-  
+
     book_id = input("Enter Book ID: ")
     book_name = input("Enter Book Name (use _ instead of space): ")
     quantity = input("Enter Quantity: ")
@@ -70,7 +71,7 @@ def display_books():
         print()
 
 def update_book_quantity():
-    records, index = get_active_record_index()
+    records, index = get_active_book()
     if records is None:
         return
 
@@ -81,7 +82,7 @@ def update_book_quantity():
     print("Quantity updated successfully.\n")
 
 def delete_book():
-    records, index = get_active_record_index()
+    records, index = get_active_book()
     if records is None:
         return
 
