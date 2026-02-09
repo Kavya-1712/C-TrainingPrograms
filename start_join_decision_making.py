@@ -3,21 +3,26 @@ import time
 
 results = []
 
-def work(n):
+def process_task(task_id):
     time.sleep(2)
-    results.append(n)
-    print(f"Thread finished: {n}")
+    results.append(task_id)
+    print(f"Thread finished: {task_id}")
 
-print("Main started")
+def main():
+    print("Main started")
 
-threads = []
-for i in range(5):
-    t = threading.Thread(target=work, args=(i,))
-    threads.append(t)
-    t.start()
+    threads = []
 
-for t in threads:
-    t.join()
+    for task_id in range(5):
+        thread = threading.Thread(target=process_task, args=(task_id,))
+        threads.append(thread)
+        thread.start()
 
-print("Main thread decision point")
-print("Results:", results)
+    for thread in threads:
+        thread.join()
+
+    print("Main thread decision point")
+    print("Results:", results)
+
+if __name__ == "__main__":
+    main()
